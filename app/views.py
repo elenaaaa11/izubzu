@@ -10,7 +10,7 @@ def index(request):
         houses = cursor.fetchall()
 
     result_dict = {'records': houses}
-    
+
     return render(request,'app/index.html',result_dict)
 
 def rent(request):
@@ -28,4 +28,23 @@ def rent(request):
     result_dict = {'records': houses}
 
     return render(request,'app/rent.html',result_dict)
-                
+
+def register(request):
+    context={}
+    status=''
+
+    ## Add the user
+    if request.POST:
+        with connection.cursor() as cursor:
+            cursor.execute("INSERT INTO user_info (%s,%s,%s,%s,%s)",
+            [request.POST['first_name'],request.POST['real_name'],request.POST['password'],
+            request.POST['phone_number'],request.POST['email']])
+
+            status='You have registed successfully!'
+            cursor.execute("SELECT * FROM user_info WHERE email = %s", [request.POST['email']])
+            obj = obj = cursor.fetchone()
+
+    context["obj"] = obj
+    context["status"] = status
+
+    return render(request, "app/register.html", context)
