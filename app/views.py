@@ -42,7 +42,7 @@ def register(request):
 
             status='You have registed successfully!'
             cursor.execute("SELECT * FROM user_info WHERE email = %s", [request.POST['email']])
-            obj = obj = cursor.fetchone()
+            obj = cursor.fetchone()
 
     context["obj"] = obj
     context["status"] = status
