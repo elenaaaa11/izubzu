@@ -6,8 +6,23 @@
     <h4>Please Select Your Service!</h4><br/><br/>
     <a href="register"><button>Register Now!</button></a><br/>
     <a href="sign-in"><button>Sign In</button></a><br/>
-    <a href="rent">See all houses for rent!</a></br>
-    <a href="post">Post a new house for rent</a></br>
+    <a href="post">Post a new house for rent</a></br></br>
 
+    <h4> Check Our recommendation List!</h4>
+    <table border=1>
+        <thead>
+            <th>House Title</th>
+            <th>Room Size</th>
+            <th>Price</th>
+        </thead>
+        {% for house in records%}
+        <tr>
+            <td>{{ house.0 }}</td>
+            <td>{{ house.2 }}</td>
+            <td>{{ house.9 }}</td>
+        </tr>
+        {% endfor %}
+    </table></br>
+    <a href="rent">Click here to see all houses for rent!</a></br>
 </body>
 </html>
