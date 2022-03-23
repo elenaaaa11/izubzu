@@ -8,16 +8,16 @@
 
     <form method='POST'>
         {% csrf_token %}
-        <div id="div_id_first_name" class="control-group"> <label for="id_first_name" class="control-label requiredField">
+        <div id="div_id_user_name" class="control-group"> <label for="id_user_name" class="control-label requiredField">
         User name<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="user_name" value="{{obj.0}}" maxlength="32" class="textinput textInput" required="" id="id_user_name"> </div> </div> 
         <div id="div_id_real_name" class="control-group"> <label for="id_v" class="control-label requiredField">
         Full name<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="real_name" value="{{obj.0}}" maxlength="32" class="textinput textInput" required="" id="id_real_name"> </div> </div> 
         <div id="div_id_password" class="control-group"> <label for="id_password" class="control-label requiredField">
-        Password (6-16 characters)<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="real_name" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_password"> </div> </div> 
+        Password (6-16 characters)<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="password" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_password"> </div> </div> 
         <div id="div_id_phone_number" class="control-group"> <label for="id_phone_number" class="control-label requiredField">
-        Phone Number<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="real_name" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_phone_number"> </div> </div> 
+        Phone Number<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="phone_number" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_phone_number"> </div> </div> 
         <div id="div_id_email" class="control-group"> <label for="id_email" class="control-label requiredField">
-        Email<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="real_name" value="{{obj.0}}" maxlength="64" class="textinput textInput" required="" id="id_real_name"> </div> </div> 
+        Email<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="email" value="{{obj.0}}" maxlength="64" class="textinput textInput" required="" id="id_email"> </div> </div> 
 
         <br>
         <button type="submit" value="register">Register!</button>
