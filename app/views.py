@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.db import connection
 
+
+
 def index(request):
     """Shows the main page"""
 
@@ -12,6 +14,8 @@ def index(request):
     result_dict = {'records': houses}
 
     return render(request,'app/index.html',result_dict)
+
+
 
 def rent(request):
 
@@ -29,6 +33,9 @@ def rent(request):
 
     return render(request,'app/rent.html',result_dict)
 
+
+
+
 def register(request):
     context={}
     status=''
@@ -37,7 +44,7 @@ def register(request):
     if request.POST:
         with connection.cursor() as cursor:
             cursor.execute("INSERT INTO user_info (%s,%s,%s,%s,%s)",
-            [request.POST['first_name'],request.POST['real_name'],request.POST['password'],
+            [request.POST['user_name'],request.POST['real_name'],request.POST['password'],
             request.POST['phone_number'],request.POST['email']])
 
             status='You have registed successfully!'
