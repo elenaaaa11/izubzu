@@ -2,4 +2,4 @@ from django.shortcuts import render, redirect
 from django.db import connection
 
 def index(request):
-    return 0
+    return render(request,'app/index.html')
