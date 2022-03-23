@@ -3,10 +3,14 @@ from django.db import connection
 
 def index(request):
     """Shows the main page"""
+
+    ## Show recommendation list
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM house_info ORDER BY expected_price")
+        cursor.execute("SELECT * FROM house_info ORDER BY expected_price LIMIT(5)")
         houses = cursor.fetchall()
+
     result_dict = {'records': houses}
+    
     return render(request,'app/index.html',result_dict)
 
 def rent(request):
