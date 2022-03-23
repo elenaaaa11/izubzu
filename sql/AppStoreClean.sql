@@ -1,0 +1,4 @@
+DROP TABLE IF EXISTS rent_history;
+DROP TABLE IF EXISTS house_info;
+DROP TABLE IF EXISTS area_info;
+DROP TABLE IF EXISTS user_info;
