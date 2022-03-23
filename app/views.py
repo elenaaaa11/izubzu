@@ -43,7 +43,7 @@ def register(request):
     ## Add the user
     if request.POST:
         with connection.cursor() as cursor:
-            cursor.execute("INSERT INTO user_info (%s,%s,%s,%s,%s)",
+            cursor.execute("INSERT INTO user_info VALUES (%s,%s,%s,%s,%s)",
             [request.POST['user_name'],request.POST['real_name'],request.POST['password'],
             request.POST['phone_number'],request.POST['email']])
 
