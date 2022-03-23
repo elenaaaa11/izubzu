@@ -44,7 +44,6 @@ def register(request):
             cursor.execute("SELECT * FROM user_info WHERE email = %s", [request.POST['email']])
             obj = cursor.fetchone()
 
-    context["obj"] = obj
     context["status"] = status
 
     return render(request, "app/register.html", context)
