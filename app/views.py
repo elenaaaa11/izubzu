@@ -3,7 +3,11 @@ from django.db import connection
 
 def index(request):
     """Shows the main page"""
-    return render(request,'app/index.html')
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT * FROM house_info ORDER BY expected_price")
+        houses = cursor.fetchall()
+    result_dict = {'records': houses}
+    return render(request,'app/index.html',result_dict)
 
 def rent(request):
 
