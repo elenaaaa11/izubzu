@@ -62,7 +62,7 @@ def view(request, title):
     if request.POST:
         if request.POST['action'] == 'rent':
             with connection.cursor() as cursor:
-                cursor.execute("UPDATE house_info SET house_status = 'RENTED' WHERE house_title = %s",[request.POST['id']])
+                cursor.execute("UPDATE house_info SET house_status = 'RENTED' WHERE house_title = %s",[request.POST['title']])
                 # Update the record in rent_history
 
     with connection.cursor() as cursor:
