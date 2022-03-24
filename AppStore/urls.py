@@ -9,5 +9,6 @@ urlpatterns = [
     path('register', app.views.register, name='register'),
     #path('post', app.views.register, name='post'),
     #path('sign_in', app.views.sign_in, name='sign_in'),
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
+    path('view/<str:title>', app.views.view, name='view')
 ]
