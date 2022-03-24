@@ -1,0 +1,83 @@
+<html>
+<body>
+    <h2>Detail for {{house.0}}</h2>
+    <a href="/">Back to home</a>
+    <br/><br/>
+    <table style='text-align:left'>
+        <tr>
+            <th>House Title</th>
+            <td>:</td>
+            <td>{{ house.0 }}</td>
+        </tr>
+        <tr>
+            <th>Expected Price</th>
+            <td>:</td>
+            <td>{{ house.9 }}</td>
+        </tr>
+        <tr>
+            <th>Room Size(in square foots)</th>
+            <td>:</td>
+            <td>{{ house.2 }}</td>
+        </tr>
+        <tr>
+            <th>Price Per Sqaure Feet</th>
+            <td>:</td>
+            <td>{{ house.10 }}</td>
+        </tr>
+        <tr>
+            <th>Available Date</th>
+            <td>:</td>
+            <td>{{ house.8 }}</td>
+        </tr>
+        <tr>
+            <th>Number of Bedrooms</th>
+            <td>:</td>
+            <td>{{ house.5 }}</td>
+        </tr>
+        <tr>
+            <th>Number of Washrooms</th>
+            <td>:</td>
+            <td>{{ house.6 }}</td>
+        </tr>
+        <tr>
+            <th>Area</th>
+            <td>:</td>
+            <td>{{ house.1 }}</td>
+        </tr>
+        <tr>
+            <th>House Location</th>
+            <td>:</td>
+            <td>{{ house.3 }}</td>
+        </tr>
+        <tr>
+            <th>Postal Code</th>
+            <td>:</td>
+            <td>{{ house.4 }}</td>
+        </tr>
+        <tr>
+            <th>Maximum Tenants</th>
+            <td>:</td>
+            <td>{{ house.7 }}</td>
+        </tr>
+        <tr>
+            <th>Negotiable Or Not</th>
+            <td>:</td>
+            <td>{{ house.11 }}</td>
+        </tr>
+        <tr>
+            <th>Owner's Email</th>
+            <td>:</td>
+            <td>{{ house.12 }}</td>
+        </tr>
+        <tr>
+            <th>Owner's Phone Number</th>
+            <td>:</td>
+            <td>{{ house.13 }}</td>
+        </tr>
+    </table></br>
+    <form method="POST" style="display: inline;">
+        <input type="hidden" name="id" value="{{house.0}}"/>
+        <button onclick="return confirm('Are you sure you want to rent {{house.0}}?');" type="submit" name="action" value="rent">Rent</button>
+        </form>
+</body>
+</html>

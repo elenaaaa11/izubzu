@@ -2,7 +2,7 @@
 <html>
 <body>
     <h2>All houses for rent</h2>
-    <img src="{% static 'app/images/logo.png' %}" width="10%" alt="Izubzu Logo"/><br/>
+    <img src="{% static 'app/images/logo.png' %}" width="10%" alt="Izubzu Logo"/><br/><br/>
     <table border=1>
         <thead>
             <th>House Title</th>
@@ -16,7 +16,7 @@
             <td>{{ house.2 }}</td>
             <td>{{ house.9 }}</td>
             <td>
-                <a herf="view/{{ house.0 }}"></button></a> |
+                <a herf="view/{{ house.0 }}">View Details</button></a> |
                 <form method="POST" style="display: inline;">
                 <input type="hidden" name="id" value="{{house.0}}"/>
                 <button onclick="return confirm('Are you sure you want to rent {{house.0}}?');" type="submit" name="action" value="rent">Rent</button>

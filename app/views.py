@@ -54,3 +54,21 @@ def register(request):
     context["status"] = status
 
     return render(request, "app/register.html", context)
+
+
+def view(request, title):
+
+    ## Rent the house
+    if request.POST:
+        if request.POST['action'] == 'rent':
+            with connection.cursor() as cursor:
+                cursor.execute("UPDATE house_info SET house_status = 'RENTED' WHERE house_title = %s",[request.POST['id']])
+                # Update the record in rent_history
+
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT * FROM house_info WHERE house_title = %s", [title])
+        house = cursor.fetchone()
+
+        result_dict = {'house': house}
+    
+    return render(request,'app/view.html',result_dict)
