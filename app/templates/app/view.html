@@ -1,8 +1,11 @@
+{% load static %}
 <html>
 <body>
-    <h2>Detail for {{house.0}}</h2>
+    <h2>Details for {{house.0}}</h2>
     <a href="/">Back to home</a>
-    <br/><br/>
+    <br/>
+    <img src="{% static 'app/images/logo.png' %}" width="10%" alt="Izubzu Logo"/>
+    <br/>
     <table style='text-align:left'>
         <tr>
             <th>House Title</th>
