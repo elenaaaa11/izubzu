@@ -1,0 +1,29 @@
+{% load static %}
+<html>
+<body>
+    <h2> Thanks for trusting Izubzu!</h2>
+    <img src="{% static 'app/images/logo.png' %}" width="10%" alt="Izubzu Logo"/><br/><br/>
+
+    <p style="color:aqua">{{ status|safe }}</p>
+
+    <a href='/'>Cancel Register or Go Back</a>
+
+    <form method='POST'>
+        {% csrf_token %}
+        <div id="div_id_house_title" class="control-group"> <label for="id_house_title" class="control-label requiredField">
+        House Title<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="house_title" value="{{obj.0}}" maxlength="128" class="textinput textInput" required="" id="id_house_title"> </div> </div> 
+        <div id="div_id_area" class="control-group"> <label for="id_area" class="control-label requiredField">
+        Area<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="area" value="{{obj.0}}" maxlength="32" class="textinput textInput" required="" id="id_area"> </div> </div> 
+        <div id="div_id_room_size" class="control-group"> <label for="id_room_size" class="control-label requiredField">
+        Room Size<span class="asteriskField">*</span> </label> <div class="controls"> <input type="number" name="room_size" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_room_size"> </div> </div> 
+        <div id="div_id_phone_number" class="control-group"> <label for="id_phone_number" class="control-label requiredField">
+        Phone Number<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="phone_number" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_phone_number"> </div> </div> 
+        <div id="div_id_email" class="control-group"> <label for="id_email" class="control-label requiredField">
+        Email<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="email" value="{{obj.0}}" maxlength="64" class="textinput textInput" required="" id="id_email"> </div> </div> 
+        
+        
+        <br>
+        <button type="submit" value="post">Post!</button>
+        </form>
+</body>
+</html>
