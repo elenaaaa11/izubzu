@@ -16,6 +16,34 @@ INSERT INTO house_info VALUES ('Marina One Residences','Boat Quay',753,'23 Marin
 INSERT INTO house_info VALUES ('Marina Two Residences','Boat Quay',554,'29 Marina Way',
 							  '018950',3,3,6,'2022-3-30',3500.0,6.31,'YES','hkohlert58@cloudflare.com',
 							  '2446353960','FOR RENT');		
+INSERT INTO house_info VALUES ('Robertson Quay','Boat Quay',251,'113 Marina Way',
+							  '059815',1,1,1,CURRENT_DATE,3200.0,12.75,'YES','tmacgragh1q@alexa.com',
+							  '8195148939','FOR RENT');	
+INSERT INTO house_info VALUES ('lyf Funan Sinagpore','Boat Quay',76,'67 Hill Street',
+							  '179017',1,1,1,'2022-7-15',2119.0,27.88,'YES','mschoenrock2k@ca.gov',
+							  '2866480090','FOR RENT');	
+INSERT INTO house_info VALUES ('Havelock Road','Boat Quay',270,'29 Havelock Road',
+							  '158752',2,2,4,'2022-6-18',2900.0,0.74,'YES','hbradley3h@phoca.cz',
+							  '9851111643','FOR RENT');	
+INSERT INTO house_info VALUES ('High Street Center','Boat Quay',150,'2 North Bridge Rd',
+							  '012381',1,1,2,'2023-2-14',1400.0,9.33,'YES','maitcheson3e@indiegogo.com',
+							  '2191914764','FOR RENT');	
+                              
+INSERT INTO house_info VALUES ('Eden Residence','Boat Quay',3003,'11 Stanford Rd',
+							  '812554',3,4,8,'2022-9-12',18000.0,5.99,'YES','kheers40@clickbank.net',
+							  '8836765199','FOR RENT');	
+INSERT INTO house_info VALUES ('Bishan Park Condo','Boat Quay',1346,'20 Sin Ming Walk',
+							  '012546',3,2,6,CURRENT_DATE,4300.0,3.19,'YES','maitcheson3e@indiegogo.com',
+							  '2191914764','FOR RENT');
+INSERT INTO house_info VALUES ('226 Bishan Street 23','Boat Quay',100,'226 Bishan Street 23',
+							  '012384',1,1,2,CURRENT_DATE,900.0,9.00,'YES','jsnozzwell42@epa.gov',
+							  '7769836029','FOR RENT');	
+INSERT INTO house_info VALUES ('New Soo Chow Gardens','Boat Quay',2455,'2 Soo Chow Way',
+							  '012381',4,4,9,'2022-9-22',7800.0,3.18,'YES','rbreyt43@wiley.com',
+							  '9491908946','FOR RENT');	
+INSERT INTO house_info VALUES ('161 Ellington Square','Boat Quay',100,'161 Ellington Square',
+							  '254577',1,1,2,CURRENT_DATE,550.0,5.50,'YES','fmoller44@netscape.com',
+							  '9873803567','FOR RENT');	
 
 
 

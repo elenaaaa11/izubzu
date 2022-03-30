@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.db import connection
-
-
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
 
 def index(request):
     """Shows the main page"""
@@ -43,13 +43,19 @@ def register(request):
     ## Add the user
     if request.POST:
         with connection.cursor() as cursor:
+            user_name = request.POST['user_name']
+            real_name = request.POST['real_name']
+            password = request.POST['password']
+            phone_no = request.POST['phone_number']
+            email = request.POST['email']
+
             cursor.execute("INSERT INTO user_info VALUES (%s,%s,%s,%s,%s)",
-            [request.POST['user_name'],request.POST['real_name'],request.POST['password'],
-            request.POST['phone_number'],request.POST['email']])
+            [user_name,real_name,password,phone_no,email])
+
+            user = User.objects.create_user(user_name, email, password)
+            user.save()
 
             status='You have registed successfully!'
-            cursor.execute("SELECT * FROM user_info WHERE email = %s", [request.POST['email']])
-            obj = cursor.fetchone()
 
     context["status"] = status
 
@@ -58,6 +64,12 @@ def register(request):
 
 def view(request, title):
 
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT * FROM house_info WHERE house_title = %s", [title])
+        house = cursor.fetchone()
+
+        result_dict = {'house': house}
+        
     ## Rent the house
     if request.POST:
         if request.POST['action'] == 'rent':
@@ -65,10 +77,20 @@ def view(request, title):
                 cursor.execute("UPDATE house_info SET house_status = 'RENTED' WHERE house_title = %s",[request.POST['title']])
                 # Update the record in rent_history
 
-    with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM house_info WHERE house_title = %s", [title])
-        house = cursor.fetchone()
-
-        result_dict = {'house': house}
-    
     return render(request,'app/view.html',result_dict)
+
+def login(request):
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(request, username=username, password=password)
+    context={}
+    status = ''
+
+    if user is not None:
+        status='You have registed successfully!'
+        context["status"] = status
+        return render(request, "app/register.html", context)
+
+    else:
+        status='Emmm... Seems username/password is wrong! Please check again!'
+        return render(request, "app/register.html", context)
