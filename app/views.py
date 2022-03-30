@@ -80,7 +80,7 @@ def view(request, title):
     return render(request,'app/view.html',result_dict)
 
 def login(request):
-    username = request.POST['username']
+    username = request.POST['user_name']
     password = request.POST['password']
     user = authenticate(request, username=username, password=password)
     context={}
