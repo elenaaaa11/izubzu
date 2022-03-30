@@ -94,5 +94,6 @@ def login(request):
         
         else:
             status='Emmm... Seems username/password is wrong! Please check again!'
+            context["status"] = status
     
     return render(request, "app/login.html", context)
