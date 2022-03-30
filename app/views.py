@@ -80,17 +80,17 @@ def view(request, title):
     return render(request,'app/view.html',result_dict)
 
 def login(request):
-    user_name = request.POST['user_name']
-    pw = request.POST['password']
-    user = authenticate(request, username=user_name, password=pw)
-    context={}
-    status = ''
-
-    if user is not None:
-        status='You have registed successfully!'
-        context["status"] = status
-        return render(request, "app/login.html", context)
-
-    else:
-        status='Emmm... Seems username/password is wrong! Please check again!'
-        return render(request, "app/login.html", context)
+    if request.POST:
+        user_name = request.POST['user_name']
+        pw = request.POST['password']
+        user = authenticate(request, username=user_name, password=pw)
+        context={}
+        status = ''
+        
+        if user is not None:
+            status='You have registed successfully!'
+            context["status"] = status
+            return render(request, "app/login.html", context)
+        else:
+            status='Emmm... Seems username/password is wrong! Please check again!'
+            return render(request, "app/login.html", context)
