@@ -89,8 +89,8 @@ def login(request):
     if user is not None:
         status='You have registed successfully!'
         context["status"] = status
-        return render(request, "app/register.html", context)
+        return render(request, "app/login.html", context)
 
     else:
         status='Emmm... Seems username/password is wrong! Please check again!'
-        return render(request, "app/register.html", context)
+        return render(request, "app/login.html", context)
