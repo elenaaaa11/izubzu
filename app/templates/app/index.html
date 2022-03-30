@@ -3,15 +3,15 @@
 <body>
     <h2>Welcome to Izubzu!</h2>
     <img src="{% static 'app/images/logo.png' %}" width="10%" alt="Izubzu Logo"/><br/>
-    <h4>Please Register/Log in to enjoy our service!</h4><br/>
+    <h4>Please Register/Log in to enjoy our service!</h4>
     <a href="register"><button>Register Now!</button></a><br/>
-    <a href="login"><button>Sign In</button></a><br/>
+    <a href="login"><button>Sign In</button></a><br/><br/>
 
-    <h4> Contact our best seller! </h4></br>
+    <h4> Contact our best seller! </h4>
     <h6> Username: {{best_seller.1}} </h6>
-    <h6> Email: {{best_seller.2}} </h6>
+    <h6> Email: {{best_seller.2}} </h6><br/>
 
-    <h4> There are {{total.0}} houses looking for tenants! </h4></br></br>
+    <h4> There are {{total.0}} houses looking for tenants! </h4><br/>
     <h4> Check Our recommendation List!</h4>
     <table border=1>
         <thead>
@@ -27,7 +27,7 @@
         </tr>
         {% endfor %}
     </table></br>
-    <a href="post">Post a new house for rent</a></br>
-    <a href="rent">Click here to see all houses for rent!</a></br>
+    <a href="post">Post a new house for rent</a>
+    <a href="rent">Click here to see all houses for rent!</a><br/>
 </body>
 </html>
