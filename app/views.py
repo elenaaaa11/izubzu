@@ -89,7 +89,7 @@ def login(request):
         user = authenticate(request, username=user_name, password=pw)
 
         if user is not None:
-            status='You have registed successfully!'
+            status='You have log in successfully!'
             context["status"] = status
         
         else:
