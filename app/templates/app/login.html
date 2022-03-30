@@ -4,6 +4,8 @@
     <h2>Log In</h2></br>
     <img src="{% static 'app/images/logo.png' %}" width="10%" alt="Izubzu Logo"/><br/><br/>
 
+    <p style="color:aqua">{{ status|safe }}</p>
+
     <a href='/'>Cancel log in or Go Back</a>
 
     <form method='POST'>
@@ -12,11 +14,9 @@
         User name<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="user_name" value="{{obj.0}}" maxlength="32" class="textinput textInput" required="" id="id_user_name"> </div> </div> 
         <div id="div_id_password" class="control-group"> <label for="id_password" class="control-label requiredField">
         Password<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="password" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_password"> </div> </div> 
+        
         <br>
         <button type="submit" value="login">Log in!</button>
         </form>   
-    
-    <p style="color:aqua">{{ status|safe }}</p>
-
 </body>
 </html>

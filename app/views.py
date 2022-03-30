@@ -8,10 +8,21 @@ def index(request):
 
     ## Show recommendation list
     with connection.cursor() as cursor:
+        cursor.execute("SELECT COUNT(*) FROM house_info WHERE  house_status='FOR RENT' LIMIT(1)")
+        total = cursor.fetchone()
+
         cursor.execute("SELECT * FROM house_info ORDER BY expected_price LIMIT(5)")
         houses = cursor.fetchall()
 
-    result_dict = {'records': houses}
+        # Try advanced queries
+        cursor.execute("SELECT COUNT(*) AS sell_count, user_name, email FROM house_info h LEFT JOIN user_info u ON u.email = h.owner_email WHERE house_status='FOR RENT' GROUP BY u.email ORDER BY sell_count LIMIT (1)")
+        best_seller = cursor.fetchone()
+
+
+
+    result_dict = {'records': houses,
+                   'total': total,
+                   'best_seller': best_seller}
 
     return render(request,'app/index.html',result_dict)
 
