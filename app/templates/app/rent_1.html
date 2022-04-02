@@ -1,0 +1,44 @@
+{% load static %}
+<html>
+<body>
+    <h2>Rent {{house.0}} Now!</h2>
+    <a href="/">Cancel Rent or Go Back</a>
+    <br/>
+    <img src="{% static 'app/images/logo.png' %}" width="10%" alt="Izubzu Logo"/>
+    <br/>
+
+    <table style='text-align:left'>
+        <tr>
+            <th>House Title</th>
+            <td>:</td>
+            <td>{{ house.0 }}</td>
+        </tr>
+        <tr>
+            <th>Expected Price</th>
+            <td>:</td>
+            <td>{{ house.9 }}</td>
+        </tr>
+        <tr>
+            <th>Room Size(in square foots)</th>
+            <td>:</td>
+            <td>{{ house.2 }}</td>
+        </tr>
+        
+    </table></br>
+
+    <form method='POST'>
+        {% csrf_token %}
+        <div id="div_id_rent_date" class="control-group"> <label for="id_rent_date" class="control-label requiredField">
+        Rent Date<span class="asteriskField">*</span> </label> <div class="controls"> <input type="date" name="rent_date" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_rent_date"> </div> </div>   
+
+        <div id="div_id_price" class="control-group"> <label for="id_price" class="control-label requiredField">
+        Price<span class="asteriskField">*</span> </label> <div class="controls"> <input type="number" min = '0' step = '0.01' name="price" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_price"> </div> </div>         
+            
+
+        <br>
+        <input type="hidden" name="title" value="{{house.0}}"/>
+        <input type="hidden" name="owner_email" value="{{house.12}}"/>
+        <button type="submit" value="rent">Rent!</button>
+        </form>   
+</body>
+</html>

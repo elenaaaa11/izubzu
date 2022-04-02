@@ -13,14 +13,34 @@
         <div id="div_id_house_title" class="control-group"> <label for="id_house_title" class="control-label requiredField">
         House Title<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="house_title" value="{{obj.0}}" maxlength="128" class="textinput textInput" required="" id="id_house_title"> </div> </div> 
         <div id="div_id_area" class="control-group"> <label for="id_area" class="control-label requiredField">
-        Area<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="area" value="{{obj.0}}" maxlength="32" class="textinput textInput" required="" id="id_area"> </div> </div> 
+        Area<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="area_info" value="{{obj.0}}" maxlength="32" class="textinput textInput" required="" id="id_area"> </div> </div> 
         <div id="div_id_room_size" class="control-group"> <label for="id_room_size" class="control-label requiredField">
-        Room Size<span class="asteriskField">*</span> </label> <div class="controls"> <input type="number" name="room_size" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_room_size"> </div> </div> 
+        Room Size<span class="asteriskField">*</span> </label> <div class="controls"> <input type="number" name="room_size" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_room_size"> </div> </div>         
+        <div id="div_id_house_location" class="control-group"> <label for="id_house_location" class="control-label requiredField">
+        House Location<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="house_location" value="{{obj.0}}" maxlength="128" class="textinput textInput" required="" id="id_house_location"> </div> </div> 
+        <div id="div_id_postal_code" class="control-group"> <label for="id_postal_code" class="control-label requiredField">
+        Postal Code<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="postal_code" value="{{obj.0}}" maxlength="6" class="textinput textInput" required="" id="id_postal_code"> </div> </div> 
+
+        <div id="div_id_number_of_bedrooms" class="control-group"> <label for="id_number_of_bedrooms" class="control-label requiredField">
+        Bedrooms Number<span class="asteriskField">*</span> </label> <div class="controls"> <input type="number" name="number_of_bedrooms" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_number_of_bedrooms"> </div> </div>         
+        <div id="div_id_number_of_washrooms" class="control-group"> <label for="number_of_washrooms" class="control-label requiredField">
+        Washrooms Number<span class="asteriskField">*</span> </label> <div class="controls"> <input type="number" name="number_of_washrooms" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_number_of_washrooms"> </div> </div>         
+        <div id="div_id_max_tenant" class="control-group"> <label for="id_max_tenant" class="control-label requiredField">
+        Maximum Tenants<span class="asteriskField">*</span> </label> <div class="controls"> <input type="number" name="max_tenant" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_max_tenant"> </div> </div>         
+        <div id="div_id_available_date" class="control-group"> <label for="id_available_date" class="control-label requiredField">
+        Available Date<span class="asteriskField">*</span> </label> <div class="controls"> <input type="date" name="available_date" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_available_date"> </div> </div>         
+        <div id="div_id_expected_price" class="control-group"> <label for="id_expected_price" class="control-label requiredField">
+        Expected Price<span class="asteriskField">*</span> </label> <div class="controls"> <input type="number" min = '0' step = '0.01' name="expected_price" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_expected_price"> </div> </div>         
+
+
+        <div id="div_id_price_per_feet" class="control-group"> <label for="id_price_per_feet" class="control-label requiredField">
+        Price Per Sqaure Feet<span class="asteriskField">*</span> </label> <div class="controls"> <input type="number" min = '0' step = '0.01' name="price_per_feet" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_price_per_feet"> </div> </div>         
+        <div id="div_id_negotiable" class="control-group"> <label for="id_negotiable" class="control-label requiredField">
+        Negotiable Or Not<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="negotiable" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_negotiable"> </div> </div> 
         <div id="div_id_phone_number" class="control-group"> <label for="id_phone_number" class="control-label requiredField">
-        Phone Number<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="phone_number" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_phone_number"> </div> </div> 
+        Phone Number<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="owner_phone_number" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_phone_number"> </div> </div> 
         <div id="div_id_email" class="control-group"> <label for="id_email" class="control-label requiredField">
-        Email<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="email" value="{{obj.0}}" maxlength="64" class="textinput textInput" required="" id="id_email"> </div> </div> 
-        
+        Email<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="owner_email" value="{{obj.0}}" maxlength="64" class="textinput textInput" required="" id="id_email"> </div> </div>    
         
         <br>
         <button type="submit" value="post">Post!</button>
