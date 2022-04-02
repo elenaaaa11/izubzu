@@ -41,12 +41,10 @@ def rent(request):
 
 
 
-
 def register(request):
     context={}
     status=''
-
-    ## Add the user
+      ## Add the user
     if request.POST:
         with connection.cursor() as cursor:
             user_name = request.POST['user_name']
@@ -54,18 +52,22 @@ def register(request):
             password = request.POST['password']
             phone_no = request.POST['phone_number']
             email = request.POST['email']
-
-            cursor.execute("INSERT INTO user_info VALUES (%s,%s,%s,%s,%s)",
-            [user_name,real_name,password,phone_no,email])
-
-            user = User.objects.create_user(user_name, email, password)
-            user.save()
-
-            status='You have registed successfully!'
+             
+            cursor.execute("SELECT * FROM user_info WHERE email = %s", email)
+            obj = cursor.fetchone()
+            if obj.length==1:
+                status='You have already registered! Please log in. '
+            else: 
+                cursor.execute("INSERT INTO user_info VALUES (%s,%s,%s,%s,%s)",[user_name,real_name,password,phone_no,email])
+                user = User.objects.create_user(user_name, email, password)
+                user.save()
+                status='You have registed successfully!'
 
     context["status"] = status
 
     return render(request, "app/register.html", context)
+
+
 
 
 def view(request, title):
