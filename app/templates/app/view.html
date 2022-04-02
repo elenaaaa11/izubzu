@@ -80,8 +80,10 @@
     </table></br>
     <form method="POST" style="display: inline;">
         <input type="hidden" name="title" value="{{house.0}}"/>
-        <a href="rent_1"><button>Rent</button></a> 
-        {% csrf_token %}    
+    </form>
+    <a href="rent_1/{{house.0}}"><button>Rent</button></a> |
+    <form method="POST" style="display: inline;">
+    {% csrf_token %} 
     </form>
 </body>
 </html>

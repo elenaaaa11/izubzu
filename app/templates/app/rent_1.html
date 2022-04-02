@@ -7,6 +7,8 @@
     <img src="{% static 'app/images/logo.png' %}" width="10%" alt="Izubzu Logo"/>
     <br/>
 
+    <p style="color:aqua">{{ status|safe }}</p>
+
     <table style='text-align:left'>
         <tr>
             <th>House Title</th>
@@ -28,17 +30,20 @@
 
     <form method='POST'>
         {% csrf_token %}
-        <div id="div_id_rent_date" class="control-group"> <label for="id_rent_date" class="control-label requiredField">
-        Rent Date<span class="asteriskField">*</span> </label> <div class="controls"> <input type="date" name="rent_date" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_rent_date"> </div> </div>   
+        <div id="div_id_start_date" class="control-group"> <label for="id_start_date" class="control-label requiredField">
+        Start Date<span class="asteriskField">*</span> </label> <div class="controls"> <input type="date" name="start_date" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_start_date"> </div> </div>   
 
+        <div id="div_id_end_date" class="control-group"> <label for="id_end_date" class="control-label requiredField">
+        End Date<span class="asteriskField">*</span> </label> <div class="controls"> <input type="date" name="end_date" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_end_date"> </div> </div>   
+    
         <div id="div_id_price" class="control-group"> <label for="id_price" class="control-label requiredField">
         Price<span class="asteriskField">*</span> </label> <div class="controls"> <input type="number" min = '0' step = '0.01' name="price" value="{{obj.0}}" maxlength="16" class="textinput textInput" required="" id="id_price"> </div> </div>         
-            
+        
+        <input type="hidden" name="title" value="{{ house.0 }}"/>
+        <input type="hidden" name="owner_email" value="{{ house.12 }}"/>
 
         <br>
-        <input type="hidden" name="title" value="{{house.0}}"/>
-        <input type="hidden" name="owner_email" value="{{house.12}}"/>
         <button type="submit" value="rent">Rent!</button>
-        </form>   
+        </form> 
 </body>
 </html>
