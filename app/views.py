@@ -54,8 +54,10 @@ def register(request):
             email = request.POST['email']
              
             cursor.execute("SELECT * FROM user_info WHERE email = %s", [email])
-            obj = cursor.fetchone()
-            if obj!=None:
+            em= cursor.fetchone()
+            cursor.execute("SELECT * FROM user_info WHERE phone_number = %s", [phone_no])
+            pn= cursor.fetchone()
+            if (em!=None) or (pn !=None):
                 status='You have already registered! Please log in. '
             else: 
                 cursor.execute("INSERT INTO user_info VALUES (%s,%s,%s,%s,%s)",[user_name,real_name,password,phone_no,email])
@@ -66,7 +68,6 @@ def register(request):
     context["status"] = status
 
     return render(request, "app/register.html", context)
-
 
 
 
