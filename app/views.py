@@ -55,7 +55,7 @@ def register(request):
              
             cursor.execute("SELECT * FROM user_info WHERE email = %s", [email])
             obj = cursor.fetchone()
-            if obj.length==1:
+            if obj!=None:
                 status='You have already registered! Please log in. '
             else: 
                 cursor.execute("INSERT INTO user_info VALUES (%s,%s,%s,%s,%s)",[user_name,real_name,password,phone_no,email])
