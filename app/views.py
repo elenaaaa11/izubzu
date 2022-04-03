@@ -53,7 +53,7 @@ def register(request):
             phone_no = request.POST['phone_number']
             email = request.POST['email']
              
-            cursor.execute("SELECT * FROM user_info WHERE email = %s", email)
+            cursor.execute("SELECT * FROM user_info WHERE email = %s", [email])
             obj = cursor.fetchone()
             if obj.length==1:
                 status='You have already registered! Please log in. '
