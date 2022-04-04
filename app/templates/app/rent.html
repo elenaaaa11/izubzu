@@ -4,36 +4,8 @@
     <h2>All houses for rent</h2>
     <img src="{% static 'app/images/logo.png' %}" width="10%" alt="Izubzu Logo"/><br/><br/>
     <a href='/'>Go Back</a>
+    <a href="sort_htl"><button>Price high to low</button></a> 
     
-   
-<div>
- <button @click="btn()">Price↑↓</button>
-</div>
-
-    <script>
-data(){
-return{
-a:1,
-}
-},
-methodes:{
-orderby(){
-            axios.get('http://127.0.0.1:8000/orderby?a='+this.a).then(resp=>{
-                this.records=resp.data.data
-                console.log(resp.data.msg)
-        })
-        },
-        btn(){
-            if (this.a==1){
-                this.a=2            
-            }else{
-                this.a=1
-            }
-            this.orderby()
-        }
-}
-
- </script>
 
 
 
