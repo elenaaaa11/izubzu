@@ -190,7 +190,7 @@ def area(request,area_name):
         cursor.execute("SELECT * FROM house_info WHERE house_status = 'FOR RENT' AND area = %s ORDER BY expected_price ", [area_name])
         houses = cursor.fetchall()
     
-    result_dict = {'house': houses}
-
+    result_dict = {'records': houses}
+    
     return render(request,'app/area.html',result_dict)
 
