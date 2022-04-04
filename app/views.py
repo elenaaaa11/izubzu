@@ -39,15 +39,17 @@ def rent(request):
 
     return render(request,'app/rent.html',result_dict)
 
-class OrderByView(APIView):
-    def get(self, request):
-        a = request.GET.get('a')
-        if a == '1':
-            goods = records.objects.order_by('expected_price')
-        else:
-            goods = records.objects.order_by('-expected_price')
-        ser = GoodsSer(goods, many=True)
-        return Response({'data': ser.data})
+
+
+def sort_htl(request):
+
+            
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT * FROM house_info WHERE house_status = 'FOR RENT' ORDER BY expected_price DESC")
+        houses = cursor.fetchall()
+    result_dict = {'records': houses}
+    
+    return render(request,'app/sort_htl.html',result_dict)
 
 def register(request):
     context={}
