@@ -187,7 +187,7 @@ def rent_1(request, title):
 def area(request,area):
 
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM house_info WHERE area = %s ", [area])
+        cursor.execute("SELECT * FROM house_info WHERE house_status = 'FOR RENT' AND area = %s ORDER BY expected_price ", [area])
         houses = cursor.fetchall()
     
     result_dict = {'house': houses}
