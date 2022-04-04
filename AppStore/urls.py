@@ -14,4 +14,5 @@ urlpatterns = [
     path('view/<str:title>', app.views.view, name='view'),
     path('rent_1/<str:title>', app.views.rent_1, name='rent_1'),
     path('view/rent_1/<str:title>', app.views.rent_1, name='rent_2')
+    path('area/view/<str:title>', app.views.view, name='rent_area')
 ]
