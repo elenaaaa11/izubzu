@@ -1,0 +1,35 @@
+<h2>All houses for rent</h2>
+    <img src="{% static 'app/images/logo.png' %}" width="10%" alt="Izubzu Logo"/><br/><br/>
+    <a href='/'>Go Back</a>
+    <a href="rent"><button>Price low to high/button></a> 
+    
+
+    <table border=1>
+        <thead>
+            <th>House Title</th>
+            <th>Room Size</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </thead>
+        {% for house in records %}
+        <tr>
+            <td>{{ house.0 }}</td>
+            <td>{{ house.2 }}</td>
+            <td>{{ house.9 }}</td>
+            <td>
+                <a href="view/{{house.0}}"><button>View Details</button></a> |
+                <form method="POST" style="display: inline;">
+                {% csrf_token %}
+                </form>
+
+                <a href="rent_1/{{house.0}}"><button>Rent</button></a> |
+                <form method="POST" style="display: inline;">
+                {% csrf_token %}
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
