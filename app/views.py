@@ -184,10 +184,10 @@ def rent_1(request, title):
     return render(request, 'app/rent_1.html', result_dict)
 
 
-def area(request,area):
+def area(request,area_name):
 
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM house_info WHERE house_status = 'FOR RENT' AND area = %s ORDER BY expected_price ", [area])
+        cursor.execute("SELECT * FROM house_info WHERE house_status = 'FOR RENT' AND area = %s ORDER BY expected_price ", [area_name])
         houses = cursor.fetchall()
     
     result_dict = {'house': houses}
